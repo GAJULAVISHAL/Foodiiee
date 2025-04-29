@@ -59,15 +59,15 @@ export default function Navbar() {
           <div className="relative cursor-pointer" onClick={toggleHistory}>
             <History className="w-7 h-7 text-gray-700" />
             {isHistoryOpen && (
-              <div className="absolute right-0 mt-10 w-96 bg-white shadow-lg rounded-md p-4 z-50">
+              <div className="absolute right-0 mt-10 w-full max-w-md sm:w-96 bg-white shadow-lg rounded-md p-4 z-50 sm:right-0 sm:mt-10 sm:rounded-md sm:p-4">
                 <h2 className="text-lg font-semibold mb-3">Order History</h2>
                 {loading ? (
                   <p className="text-sm text-gray-500">Loading...</p>
                 ) : orders.length > 0 ? (
-                  <ul className="space-y-4 max-h-64 overflow-y-auto">
+                  <ul className="space-y-4 max-h-64 overflow-y-auto sm:max-h-80">
                     {orders.map(order => (
                       <li key={order.id} className="border-b pb-3 last:border-none">
-                        <div className="flex justify-between mb-1">
+                        <div className="flex justify-between mb-1 text-sm sm:text-base">
                           <span className="font-medium">Order #{order.id}</span>
                           <span className="text-sm text-gray-500">
                             {new Date(order.createdAt).toLocaleDateString("en-IN")}
@@ -81,7 +81,7 @@ export default function Navbar() {
                             </li>
                           ))}
                         </ul>
-                        <div className="mt-2 text-right font-semibold">
+                        <div className="mt-2 text-right font-semibold text-sm sm:text-base">
                           Total: ₹{order.totalAmount}
                         </div>
                       </li>
@@ -91,6 +91,7 @@ export default function Navbar() {
                   <p className="text-sm text-gray-500">No previous orders.</p>
                 )}
               </div>
+
             )}
           </div>
 
