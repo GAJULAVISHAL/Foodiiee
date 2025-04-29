@@ -59,7 +59,7 @@ export default function Navbar() {
           <div className="relative cursor-pointer" onClick={toggleHistory}>
             <History className="w-7 h-7 text-gray-700" />
             {isHistoryOpen && (
-              <div className="absolute right-0 mt-10 w-full max-w-md sm:w-96 bg-white shadow-lg rounded-md p-4 z-50 sm:right-0 sm:mt-10 sm:rounded-md sm:p-4">
+              <div className="absolute right-0 mt-2 w-80 bg-white shadow-lg rounded-md p-4 z-50">
                 <h2 className="text-lg font-semibold mb-3">Order History</h2>
                 {loading ? (
                   <p className="text-sm text-gray-500">Loading...</p>
